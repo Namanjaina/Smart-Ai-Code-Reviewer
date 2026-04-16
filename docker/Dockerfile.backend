@@ -16,6 +16,7 @@ RUN pip install --no-cache-dir -r requirements.txt gunicorn psycopg2-binary
 COPY manage.py .
 COPY ai_agents ./ai_agents
 COPY backend ./backend
+COPY tests ./tests
 
 # Copy the compiled Vite frontend from Stage 1 into the Django directory mapping
 COPY --from=frontend-builder /app/frontend/dist ./frontend/dist
