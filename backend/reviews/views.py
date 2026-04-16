@@ -14,7 +14,7 @@ try:
 except ImportError:
     ChatOpenAI = None
 
-class ReviewView(APIView):
+@method_decorator(csrf_exempt, name='dispatch')\nclass ReviewView(APIView):
     def post(self, request):
         try:
             data = request.data
