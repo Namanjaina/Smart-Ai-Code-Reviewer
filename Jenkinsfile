@@ -9,15 +9,15 @@ pipeline {
   stages {
     stage('Backend Tests') {
       steps {
-        sh 'python -m pip install --upgrade pip'
-        sh 'python -m pip install -r requirements.txt'
-        sh 'python -m unittest discover -s tests -q'
+        bat 'python -m pip install --upgrade pip'
+        bat 'python -m pip install -r requirements.txt'
+        bat 'python -m unittest discover -s tests -q'
       }
     }
 
     stage('Docker Build') {
       steps {
-        sh 'docker compose build'
+        bat 'docker compose build'
       }
     }
   }
