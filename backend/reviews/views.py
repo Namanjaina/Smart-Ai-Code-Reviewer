@@ -2,6 +2,8 @@ import os
 import json
 import re
 import requests
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import csrf_exempt
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -14,7 +16,8 @@ try:
 except ImportError:
     ChatOpenAI = None
 
-@method_decorator(csrf_exempt, name='dispatch')\nclass ReviewView(APIView):
+@method_decorator(csrf_exempt, name='dispatch')
+class ReviewView(APIView):
     def post(self, request):
         try:
             data = request.data
