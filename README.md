@@ -5,7 +5,7 @@ Smart AI Code Reviewer ab `React + Tailwind` frontend, `FastAPI` backend, `LangC
 ## Stack
 
 - Frontend: React 18 + Tailwind CSS
-- Backend: FastAPI + SQLAlchemy
+- Backend: django + FastAPI + SQLAlchemy
 - AI layer: LangChain + OpenAI
 - Infra: Docker Compose + Jenkins
 
