@@ -543,21 +543,21 @@ function App() {
 
               {/* Top Stats */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-200 flex items-center justify-between">
+                <div className="bg-white dark:bg-slate-800 rounded-3xl p-6 shadow-sm dark:shadow-none border border-slate-200 dark:border-slate-700 flex items-center justify-between">
                   <div>
                     <p className="text-sm font-bold tracking-wider text-slate-500 uppercase mb-1">Language Detected</p>
-                    <p className="text-2xl font-bold text-slate-900">{review.language_detected || "Unknown"}</p>
+                    <p className="text-2xl font-bold text-slate-900 dark:text-white">{review.language_detected || "Unknown"}</p>
                   </div>
                   <div className="w-12 h-12 bg-blue-50 text-blue-500 rounded-2xl flex items-center justify-center">
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
                   </div>
                 </div>
 
-                <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-200 flex items-center justify-between">
+                <div className="bg-white dark:bg-slate-800 rounded-3xl p-6 shadow-sm dark:shadow-none border border-slate-200 dark:border-slate-700 flex items-center justify-between">
                   <div>
                     <p className="text-sm font-bold tracking-wider text-slate-500 uppercase mb-1">Code Rating</p>
                     <div className="flex items-baseline gap-2">
-                       <p className="text-4xl font-black text-slate-900">{review.code_rating}</p>
+                       <p className="text-4xl font-black text-slate-900 dark:text-white">{review.code_rating}</p>
                        <p className="text-lg font-bold text-slate-400">/ 10</p>
                     </div>
                   </div>
@@ -575,8 +575,8 @@ function App() {
                 {/* Left Column: Bugs & Suggestions */}
                 <div className="space-y-6">
                   {/* Bugs/Errors */}
-                  <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-200">
-                    <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                  <div className="bg-white dark:bg-slate-800 rounded-3xl p-6 shadow-sm dark:shadow-none border border-slate-200 dark:border-slate-700">
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
                       <svg className="w-5 h-5 text-rose-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" /></svg>
                       Bugs and Errors ({review.bugs_errors?.length || 0})
                     </h3>
@@ -605,8 +605,8 @@ function App() {
                   </div>
 
                   {/* Optimizations */}
-                  <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-200">
-                    <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                  <div className="bg-white dark:bg-slate-800 rounded-3xl p-6 shadow-sm dark:shadow-none border border-slate-200 dark:border-slate-700">
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
                       <svg className="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z"></path></svg>
                       Optimization Suggestions
                     </h3>
@@ -626,7 +626,7 @@ function App() {
                 </div>
 
                 {/* Right Column: Corrected Code */}
-                <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden flex flex-col h-full">
+                <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-sm dark:shadow-none border border-slate-200 dark:border-slate-700 overflow-hidden flex flex-col h-full">
                   <div className="bg-slate-900 px-6 py-4 flex justify-between items-center border-b border-slate-800">
                     <h3 className="font-bold text-white flex items-center gap-2">
                       <svg className="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
@@ -657,15 +657,15 @@ function App() {
                 <button onClick={() => setStatus("Idle")} className="text-sm font-semibold text-sky-600 hover:text-sky-700 bg-sky-50 px-4 py-2 rounded-full">← Back</button>
               </div>
               
-              <div className="bg-white rounded-3xl p-8 shadow-sm border border-slate-200">
-                <h3 className="text-xl font-bold mb-4">Framework Suggested: <span className="text-sky-600">{review.test_framework_suggested}</span></h3>
+              <div className="bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-sm dark:shadow-none border border-slate-200 dark:border-slate-700">
+                <h3 className="text-xl font-bold mb-4 dark:text-white">Framework Suggested: <span className="text-sky-600">{review.test_framework_suggested}</span></h3>
                 
-                <h4 className="font-semibold text-slate-700 mb-2 mt-4">Edge Cases Covered:</h4>
-                <ul className="list-disc pl-5 space-y-1 mb-6 text-slate-600">
+                <h4 className="font-semibold text-slate-700 dark:text-slate-300 mb-2 mt-4">Edge Cases Covered:</h4>
+                <ul className="list-disc pl-5 space-y-1 mb-6 text-slate-600 dark:text-slate-400">
                   {review.edge_cases_covered?.map((c, i) => <li key={i}>{c}</li>)}
                 </ul>
 
-                <h4 className="font-semibold text-slate-700 mb-2">Test Code:</h4>
+                <h4 className="font-semibold text-slate-700 dark:text-slate-300 mb-2">Test Code:</h4>
                 <div className="bg-slate-900 rounded-2xl p-4 overflow-x-auto relative">
                    <pre className="text-sky-400 font-mono text-sm leading-relaxed"><code>{review.generated_tests}</code></pre>
                 </div>
@@ -681,15 +681,15 @@ function App() {
                 <button onClick={() => setStatus("Idle")} className="text-sm font-semibold text-indigo-600 hover:text-indigo-700 bg-indigo-50 px-4 py-2 rounded-full">← Back</button>
               </div>
               
-              <div className="bg-white rounded-3xl p-8 shadow-sm border border-slate-200">
+              <div className="bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-sm dark:shadow-none border border-slate-200 dark:border-slate-700">
                 <div className="flex justify-between items-start mb-6">
-                   <h3 className="text-2xl font-bold">{review.title}</h3>
-                   <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs font-bold uppercase tracking-widest">{review.complexity} Complexity</span>
+                   <h3 className="text-2xl font-bold dark:text-white">{review.title}</h3>
+                   <span className="px-3 py-1 bg-indigo-100 dark:bg-indigo-900/50 text-indigo-800 dark:text-indigo-300 rounded-full text-xs font-bold uppercase tracking-widest">{review.complexity} Complexity</span>
                 </div>
-                <p className="text-slate-600 text-lg mb-8">{review.summary}</p>
+                <p className="text-slate-600 dark:text-slate-300 text-lg mb-8">{review.summary}</p>
                 
-                <h4 className="font-semibold text-slate-700 mb-2">Generated Markdown / JSDoc:</h4>
-                <div className="bg-slate-50 text-slate-800 border border-slate-200 rounded-2xl p-6 overflow-x-auto border-dashed">
+                <h4 className="font-semibold text-slate-700 dark:text-slate-300 mb-2">Generated Markdown / JSDoc:</h4>
+                <div className="bg-slate-50 dark:bg-slate-900/50 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 overflow-x-auto border-dashed">
                    <pre className="font-mono text-sm leading-relaxed whitespace-pre-wrap">{review.documentation}</pre>
                 </div>
               </div>
@@ -711,7 +711,7 @@ function App() {
 
               {/* Repo Stats */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-200 flex flex-col justify-center">
+                <div className="bg-white dark:bg-slate-800 rounded-3xl p-6 shadow-sm dark:shadow-none border border-slate-200 dark:border-slate-700 flex flex-col justify-center">
                   <p className="text-sm font-bold tracking-wider text-slate-500 uppercase mb-3">Project Rating</p>
                   <div className="flex items-center gap-4">
                      <div className={`w-14 h-14 rounded-2xl flex items-center justify-center font-bold text-2xl
@@ -720,12 +720,12 @@ function App() {
                       {review.project_rating}
                     </div>
                     <div>
-                      <p className="text-sm text-slate-600 font-medium">{review.project_rating >= 8 ? 'Excellent architecture' : review.project_rating >= 5 ? 'Needs improvement' : 'Critical refactoring required'}</p>
+                      <p className="text-sm text-slate-600 dark:text-slate-300 font-medium">{review.project_rating >= 8 ? 'Excellent architecture' : review.project_rating >= 5 ? 'Needs improvement' : 'Critical refactoring required'}</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-200 flex flex-col justify-center">
+                <div className="bg-white dark:bg-slate-800 rounded-3xl p-6 shadow-sm dark:shadow-none border border-slate-200 dark:border-slate-700 flex flex-col justify-center">
                   <p className="text-sm font-bold tracking-wider text-slate-500 uppercase mb-3">Languages Detected</p>
                   <div className="flex flex-wrap gap-2">
                     {review.languages_used?.length > 0 ? review.languages_used.map(l => (
@@ -736,9 +736,9 @@ function App() {
               </div>
 
               {/* File Explorer Details */}
-              <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
-                <div className="p-6 border-b border-slate-100 bg-slate-50/50">
-                  <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+              <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-sm dark:shadow-none border border-slate-200 dark:border-slate-700 overflow-hidden">
+                <div className="p-6 border-b border-slate-100 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/50">
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
                     <svg className="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                     File Inspection
                   </h3>
@@ -746,14 +746,14 @@ function App() {
                 <div className="divide-y divide-slate-100">
                    {review.files?.length > 0 ? review.files.map((file, i) => (
                       <details key={i} className="group" open={file.status === 'error'}>
-                        <summary className="flex items-center justify-between p-4 cursor-pointer hover:bg-slate-50 transition-colors list-none">
+                        <summary className="flex items-center justify-between p-4 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors list-none">
                            <div className="flex items-center gap-3">
                               {file.status === 'error' ? (
                                 <svg className="w-6 h-6 text-rose-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd"></path></svg>
                               ) : (
                                 <svg className="w-6 h-6 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path></svg>
                               )}
-                              <span className="font-mono text-sm font-semibold text-slate-800">{file.filename}</span>
+                              <span className="font-mono text-sm font-semibold text-slate-800 dark:text-slate-200">{file.filename}</span>
                            </div>
                            <div className="flex items-center gap-2">
                              <span className={`text-xs font-bold px-2 py-1 rounded-md uppercase tracking-wider ${file.status === 'error' ? 'bg-rose-100 text-rose-700' : 'bg-emerald-100 text-emerald-700'}`}>
@@ -763,12 +763,12 @@ function App() {
                            </div>
                         </summary>
                         
-                        <div className="p-4 bg-slate-50 border-t border-slate-100">
+                        <div className="p-4 bg-slate-50 dark:bg-slate-800/80 border-t border-slate-100 dark:border-slate-700">
                            {file.status === 'error' ? (
                               <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                                 <div>
                                   <h4 className="text-xs font-bold text-slate-500 uppercase mb-2">Error Detailed</h4>
-                                  <div className="bg-white p-4 rounded-xl border border-rose-100 text-sm text-slate-700 shadow-sm">
+                                  <div className="bg-white dark:bg-slate-900 p-4 rounded-xl border border-rose-100 dark:border-rose-900/50 text-sm text-slate-700 dark:text-slate-300 shadow-sm">
                                     {file.error_description || "No specific details provided."}
                                   </div>
                                 </div>
